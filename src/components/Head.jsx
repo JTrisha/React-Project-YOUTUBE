@@ -31,27 +31,7 @@ const Head = () => {
   setSuggestions(json.items.map(item => item.snippet.title));
   dispatch(cacheResults({[searchQuery]:json.items.map(item => item.snippet.title)}))
   };
-  // const getSearchSuggestions = async () => {
-  //   console.log(searchQuery);
-  //   const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
-  //   const text = await data.text();  // Get the raw response text
-  
-    // Extract the array within the function call using a regular expression
-  //   const match = text.match(/window\.google\.ac\.h\((.*)\)/);
-  //   if (match && match[1]) {
-  //     try {
-  //       const parsedData = JSON.parse(match[1]);  // Parse the array part
-  //       const suggestionsArray = parsedData[1];   // Get the suggestions array from the parsed data
-  //       console.log(suggestionsArray);
-  //       setSuggestions(suggestionsArray);
-  //     } catch (e) {
-  //       console.error("Error parsing suggestions:", e);
-  //     }
-  //   } else {
-  //     console.error("Unexpected response format:", text);
-  //   }
-  // };
-  
+ 
 
   const toggleMenuHandler = () => {
     dispatch(toggleMenu());
